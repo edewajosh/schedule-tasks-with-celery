@@ -25,7 +25,6 @@ def save_latest_flickr_image():
     We get the latest image and save it to our Photo Model in the database
     """
     flickr_image = get_latest_flickr_image()
-    import pdb; pdb.set_trace()
     # lets make sure we don't save the same image more than once
     # we are assuming each Flickr image has a unique Link]
     if not Photo.objects.filter(link=flickr_image['link']).exists():
